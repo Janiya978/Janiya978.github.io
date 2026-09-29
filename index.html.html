@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janiya J Kannath | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1220;
+            color: #f5f7fa;
+            line-height: 1.6;
+        }
+
+        /* Top Section */
+        header {
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 8%;
+            background:
+                radial-gradient(circle at 85% 20%, #e76f51 0, transparent 18%),
+                radial-gradient(circle at 10% 85%, #264653 0, transparent 25%),
+                #0b1220;
+        }
+
+        .hero {
+            width: 100%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .small-title {
+            color: #e76f51;
+            letter-spacing: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 0.95;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: #e76f51;
+        }
+
+        .intro {
+            color: #c7ced9;
+            max-width: 600px;
+            font-size: 18px;
+        }
+
+        .profile-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 35px;
+            border-radius: 25px;
+            transform: rotate(2deg);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+        }
+
+        .profile-card:hover {
+            transform: rotate(0deg) translateY(-5px);
+            transition: 0.3s ease;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #e76f51;
+            color: #0b1220;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .profile-card h2 {
+            margin-bottom: 8px;
+        }
+
+        .profile-card p {
+            color: #c7ced9;
+        }
+
+        .info {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 18px;
+        }
+
+        .info p {
+            margin: 8px 0;
+        }
+
+        /* Main */
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 8%;
+        }
+
+        section {
+            margin-bottom: 90px;
+        }
+
+        .section-label {
+            color: #e76f51;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        section h2 {
+            font-size: 38px;
+            margin-bottom: 25px;
+        }
+
+        .about-text {
+            max-width: 850px;
+            color: #c7ced9;
+            font-size: 18px;
+        }
+
+        /* Skills */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .skill {
+            padding: 25px;
+            background: #121c2d;
+            border-left: 5px solid #e76f51;
+            border-radius: 12px;
+        }
+
+        .skill h3 {
+            margin-bottom: 5px;
+        }
+
+        .skill p {
+            color: #aeb8c7;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            padding: 30px;
+            background: #f5f7fa;
+            color: #0b1220;
+            border-radius: 18px;
+            min-height: 230px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #e76f51;
+            right: -35px;
+            bottom: -40px;
+            opacity: 0.8;
+        }
+
+        .project-number {
+            color: #e76f51;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin: 15px 0 10px;
+        }
+
+        .project p {
+            color: #46505e;
+        }
+
+        /* Education */
+        .education {
+            border: 1px solid #263448;
+            padding: 30px;
+            border-radius: 18px;
+            background: #101a2a;
+        }
+
+        .education h3 {
+            color: #e76f51;
+            margin-bottom: 7px;
+        }
+
+        .education p {
+            color: #c7ced9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #070d17;
+            color: #8994a5;
+        }
+
+        footer strong {
+            color: #e76f51;
+        }
+
+        @media (max-width: 750px) {
+            .hero,
+            .projects,
+            .skill-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                min-height: auto;
+                padding-top: 70px;
+                padding-bottom: 70px;
+            }
+
+            .profile-card {
+                transform: none;
+            }
+
+            main {
+                padding-top: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="hero">
+
+            <div>
+                <div class="small-title">Personal Portfolio</div>
+
+                <h1>
+                    Hi, I'm<br>
+                    <span>Janiya.</span>
+                </h1>
+
+                <p class="intro">
+                    A BCA (Hons) student with a growing interest in technology,
+                    programming and problem-solving. I enjoy learning new skills,
+                    working with people and turning ideas into useful solutions.
+                </p>
+            </div>
+
+            <div class="profile-card">
+                <div class="avatar">JJ</div>
+
+                <h2>Janiya J Kannath</h2>
+                <p>BCA (Hons) Student</p>
+
+                <div class="info">
+                    <p><strong>College:</strong><br>
+                    Rajagiri College of Social Sciences</p>
+
+                    <p><strong>Focus:</strong><br>
+                    Programming & Technology</p>
+
+                    <p><strong>Strengths:</strong><br>
+                    Communication • Teamwork • Adaptability</p>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- About -->
+        <section>
+            <div class="section-label">01 / About Me</div>
+            <h2>A little about me</h2>
+
+            <p class="about-text">
+                I am Janiya J Kannath, currently pursuing BCA (Hons) at
+                Rajagiri College of Social Sciences. I am interested in exploring
+                the world of computer applications and developing my technical
+                knowledge through practical learning. I have a foundation in
+                Python, SQL and C, along with strong soft skills such as
+                communication, teamwork and adaptability. I believe that
+                continuous learning and collaboration are important for growing
+                both personally and professionally.
+            </p>
+        </section>
+
+
+        <!-- Skills -->
+        <section>
+            <div class="section-label">02 / Skills</div>
+            <h2>What I bring</h2>
+
+            <div class="skill-grid">
+
+                <div class="skill">
+                    <h3>Python</h3>
+                    <p>Programming fundamentals and logical problem-solving.</p>
+                </div>
+
+                <div class="skill">
+                    <h3>SQL</h3>
+                    <p>Working with databases, queries and structured data.</p>
+                </div>
+
+                <div class="skill">
+                    <h3>C Programming</h3>
+                    <p>Understanding programming concepts and basic algorithms.</p>
+                </div>
+
+                <div class="skill">
+                    <h3>Communication</h3>
+                    <p>Expressing ideas clearly and working effectively with others.</p>
+                </div>
+
+                <div class="skill">
+                    <h3>Teamwork</h3>
+                    <p>Collaborating with teammates to achieve common goals.</p>
+                </div>
+
+                <div class="skill">
+                    <h3>Adaptability</h3>
+                    <p>Comfortable learning new concepts and adapting to change.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Projects -->
+        <section>
+            <div class="section-label">03 / Projects</div>
+            <h2>Things I've explored</h2>
+
+            <div class="projects">
+
+                <div class="project">
+                    <div class="project-number">PROJECT 01</div>
+                    <h3>Student Record System</h3>
+                    <p>
+                        A basic student record management project designed to
+                        store and manage student information using programming
+                        concepts and structured data.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <div class="project-number">PROJECT 02</div>
+                    <h3>Library Database</h3>
+                    <p>
+                        A simple SQL-based database project for maintaining
+                        information about books, students and borrowing records.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <div class="project-number">PROJECT 03</div>
+                    <h3>Personal Portfolio</h3>
+                    <p>
+                        A responsive personal portfolio website created using
+                        HTML and CSS to present my skills, education and projects.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <div class="project-number">PROJECT 04</div>
+                    <h3>Python Mini Project</h3>
+                    <p>
+                        A beginner-friendly Python application created to
+                        practice programming logic, functions, conditions and
+                        user input.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Education -->
+        <section>
+            <div class="section-label">04 / Education</div>
+            <h2>My academic journey</h2>
+
+            <div class="education">
+                <h3>Bachelor of Computer Applications (Honours)</h3>
+                <p>Rajagiri College of Social Sciences</p>
+                <p>Building a foundation in computer applications, programming,
+                    databases and emerging technologies.</p>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Designed & created by <strong>Janiya J Kannath</strong></p>
+        <p>© 2026 • Personal Portfolio</p>
+    </footer>
+
+</body>
+</html>
